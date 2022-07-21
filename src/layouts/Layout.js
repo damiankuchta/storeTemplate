@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from './Sidebar/Sidebar';
+import Newsletter from './Newsletter/Newsletter';
 import Footer from './Footer/Footer';
 import Navbar from './Navbar/Navbar';
 
@@ -15,6 +16,7 @@ export default function Layout({ children }) {
         isDrawerDisplayed={isDrawerDisplayed}
         setIsDrawerDisplayed={setIsDrawerDisplayed}
       />
+      <Newsletter />
       <Footer />
     </React.Fragment>
   );
