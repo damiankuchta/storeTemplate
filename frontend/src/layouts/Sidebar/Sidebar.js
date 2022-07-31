@@ -35,12 +35,13 @@ export default function Sidebar({ isDrawerDisplayed, setIsDrawerDisplayed }) {
 
   return (
     <React.Fragment>
-      <Mobile
-        isDrawerDisplayed={isDrawerDisplayed}
-        handleDrawerClose={handleDrawerClose}
-        drawer={drawer}
-      />
-      <Desktop drawer={drawer} />
+        <div></div>
+      {/*<Mobile*/}
+      {/*  isDrawerDisplayed={isDrawerDisplayed}*/}
+      {/*  handleDrawerClose={handleDrawerClose}*/}
+      {/*  drawer={drawer}*/}
+      {/*/>*/}
+      {/*<Desktop drawer={drawer} />*/}
     </React.Fragment>
   );
 }
