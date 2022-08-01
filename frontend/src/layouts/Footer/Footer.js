@@ -20,7 +20,7 @@ export default function Footer() {
     return (
         <Box as="footer" sx={footerSx}>
             <Container>
-                <Grid spacing={30} flexDirection={'row'}  container>
+                <Grid spacing={30} container alignItems="center">
                     <Grid xs={5} item>
                         <Logo/>
                         <Typography variatn={'string'} sx={copyRightsSx}>

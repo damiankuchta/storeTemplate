@@ -1,47 +1,43 @@
 import React from 'react';
 import Drawer from '@mui/material/Drawer';
 
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import NavList from "../../features/navigation/components/NavList";
+import Logo from "../../components/Logo";
 
-import ListItemText from '@mui/material/ListItemText';
 
-import menu from '../../data/menu';
-import mapDictionary from '../../utils/mapDictionary';
+const boxSx = {display: {xs: 'none', sm: 'block'}, width: 320}
 
-import Mobile from './mobile/Mobile';
-import Desktop from './desktop/Desktop';
-
-export default function Sidebar({ isDrawerDisplayed, setIsDrawerDisplayed }) {
-  const handleDrawerClose = () => {
-    setIsDrawerDisplayed(false);
-  };
-
-  const drawer = (
-    <List>
-      {' '}
-      {mapDictionary(menu, (key, text) => {
-        return (
-          <ListItem key={key} disablePadding>
-            <ListItemButton>
-              <ListItemText primary={key} />
-            </ListItemButton>
-          </ListItem>
-        );
-      })}
-    </List>
-  );
-
-  return (
+const sideBarContent = (
     <React.Fragment>
-        <div></div>
-      {/*<Mobile*/}
-      {/*  isDrawerDisplayed={isDrawerDisplayed}*/}
-      {/*  handleDrawerClose={handleDrawerClose}*/}
-      {/*  drawer={drawer}*/}
-      {/*/>*/}
-      {/*<Desktop drawer={drawer} />*/}
+        <Logo color={'black'}/>
+        <Toolbar/>
+        <NavList/>
     </React.Fragment>
-  );
+)
+
+export default function Sidebar({isDrawerDisplayed, setIsDrawerDisplayed}) {
+
+    const handleDrawerClose = () => {
+        setIsDrawerDisplayed(false);
+    };
+
+
+    return (
+        <aside>
+            <Box sx={boxSx}>
+                {sideBarContent}
+            </Box>
+            <Drawer
+                variant={'temporary'}>
+                open={isDrawerDisplayed}
+                onClose={handleDrawerClose}
+                modelProps={{keepMounted: true}}>
+                {sideBarContent}
+            </Drawer>
+        </aside>
+    );
 }
+
+

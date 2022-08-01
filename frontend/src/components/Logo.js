@@ -1,7 +1,7 @@
 import {Box, Grid, Typography} from "@mui/material"
 
 const mainBoxSx = (color) => ({
-    color: "white" ?? color,
+    color: color ?? "white",
     width: "150px",
 
 })
@@ -21,7 +21,7 @@ const smallText = {
 }
 
 
-export default function Logo(color) {
+export default function Logo({color}) {
     return (
         <Box sx={mainBoxSx(color)}>
             <Grid justifyContent={'center'} alignItems={'center'} container>
