@@ -14,11 +14,11 @@ import image7
     from "../../assets/furniture/ecture-australia-curious-practice_dezeen_2364_col_13-1704x1483-sq3-1024x1024.jpg"
 import image8 from "../../assets/furniture/folk-dining-furniture-collection-allermuir_dezeen_sq-1024x1024.jpg"
 import image9 from "../../assets/furniture/hoopsy-paper-pregnancy-test-design_dezeen_2364_sq-1024x1024.jpg"
-import ImageWithTitleBar from "../../components/ImageWithTitleBar";
+import ShowcaseProduct from "../../components/ShowcaseProduct";
 
 const mainBoxSx = {
     width: "100%",
-    height: 1800,
+    height: 1300,
 }
 
 const mediumBox = {
@@ -36,19 +36,19 @@ export default function Main({children}) {
         <Box sx={mainBoxSx}>
             <Grid container flexDirection={'row'} sx={{height: "100%"}}>
                 <Grid item flexDirection={'column'} xs={4}>
-                    <Grid item sx={mediumBox}><ImageWithTitleBar src={image1}/></Grid>
-                    <Grid item sx={mediumBox}><ImageWithTitleBar src={image2}/></Grid>
-                    <Grid item sx={bigBox}><ImageWithTitleBar src={image3}/></Grid>
+                    <Grid item sx={mediumBox}><ShowcaseProduct src={image1} productName={'Some Toy'} fromPrice={200}/></Grid>
+                    <Grid item sx={mediumBox}><ShowcaseProduct src={image2}/></Grid>
+                    <Grid item sx={bigBox}><ShowcaseProduct src={image3}/></Grid>
                 </Grid>
                 <Grid item flexDirection={'column'} xs={4}>
-                    <Grid item sx={bigBox}><ImageWithTitleBar src={image4}/></Grid>
-                    <Grid item sx={mediumBox}><ImageWithTitleBar src={image5}/></Grid>
-                    <Grid item sx={mediumBox}><ImageWithTitleBar src={image6}/></Grid>
+                    <Grid item sx={bigBox}><ShowcaseProduct src={image4}/></Grid>
+                    <Grid item sx={mediumBox}><ShowcaseProduct src={image5}/></Grid>
+                    <Grid item sx={mediumBox}><ShowcaseProduct src={image6}/></Grid>
                 </Grid>
                 <Grid item flexDirection={'column'} xs={4}>
-                    <Grid item sx={mediumBox}><ImageWithTitleBar src={image7}/></Grid>
-                    <Grid item sx={bigBox}><ImageWithTitleBar src={image8}/></Grid>
-                    <Grid item sx={mediumBox}><ImageWithTitleBar src={image9}/></Grid>
+                    <Grid item sx={mediumBox}><ShowcaseProduct src={image7}/></Grid>
+                    <Grid item sx={bigBox}><ShowcaseProduct src={image8}/></Grid>
+                    <Grid item sx={mediumBox}><ShowcaseProduct src={image9}/></Grid>
                 </Grid>
             </Grid>
         </Box>

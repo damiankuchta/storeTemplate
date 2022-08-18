@@ -24,7 +24,7 @@ export default function Footer() {
                     <Grid xs={5} item>
                         <Logo/>
                         <Typography variatn={'string'} sx={copyRightsSx}>
-                            Copyright ©2022 All rights reserved | This template is made with by Colorlib
+                            Copy of <a href="https://preview.colorlib.com/theme/amado/">Theme</a> | Only for learning purposes | This template is made with by Colorlib
                         </Typography>
                     </Grid>
                     <Grid item>
