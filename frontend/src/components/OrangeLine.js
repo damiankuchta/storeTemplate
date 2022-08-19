@@ -1,14 +1,17 @@
 import React from "react"
 import Box from "@mui/material/Box";
 
-const orangeLineSx = {
-    width: "90px",
-    height: "4px",
-    backgroundColor: "orange",
-    marginBottom: "7px",
-}
 
-export default function OrangeLine() {
+export default function OrangeLine({sx}) {
+
+    const orangeLineSx = {
+        width: "80px",
+        height: "3px",
+        backgroundColor: "orange",
+        marginBottom: "7px",
+        margin: 0,
+        ...sx
+    }
 
     return (
         <Box sx={orangeLineSx}/>

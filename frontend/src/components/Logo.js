@@ -1,10 +1,5 @@
 import {Box, Grid, Typography} from "@mui/material"
 
-const mainBoxSx = (color) => ({
-    color: color ?? "white",
-    width: "150px",
-
-})
 
 const circleSx = {
     width: 30,
@@ -21,9 +16,19 @@ const smallText = {
 }
 
 
-export default function Logo({color}) {
+export default function Logo({color, sx}) {
+
+    const mainBoxSx = {
+        color: color ?? "white",
+        width: "150px",
+        display: "flex",
+        flexDirection: "column",
+        ...sx
+    }
+
+
     return (
-        <Box sx={mainBoxSx(color)}>
+        <Box sx={mainBoxSx}>
             <Grid justifyContent={'center'} alignItems={'center'} container>
                 <Grid item>
                     <Typography variant={'h3'}>

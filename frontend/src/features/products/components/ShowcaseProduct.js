@@ -1,6 +1,6 @@
 import React from "react"
 import {Box, Typography} from "@mui/material";
-import OrangeLine from "./OrangeLine";
+import OrangeLine from "../../../components/OrangeLine";
 
 const transitionTime = "0.3s"
 
@@ -16,7 +16,7 @@ const mainBoxSx = {
 
     "&:hover > div > p, &:hover > div> h5": {
         transition: transitionTime,
-        color: "white !important"
+        color: "white"
     }
 }
 
@@ -31,12 +31,17 @@ const headerBoxSx = {
     marginTop: "30px",
     marginLeft: "40px",
     zIndex: 1,
+    backgroundColor: "rgba(255, 255, 255, 0.4)",
+    borderRadius: "5px",
+    width: "410px",
+    padding: "10px"
 }
 
 const nameTextSx = {fontWeight: "550",}
+
 const priceTextSx = {
     color: "#696969",
-    fontSize: "17px",
+    fontSize: "15px",
     fontWeight: "540",
     transition: transitionTime,
 }

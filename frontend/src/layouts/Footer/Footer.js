@@ -16,6 +16,11 @@ const copyRightsSx = {
     fontSize: "12px",
 }
 
+const navListSx = {
+        display: "flex",
+        flexDirection: "row",
+}
+
 export default function Footer() {
     return (
         <Box as="footer" sx={footerSx}>
@@ -24,11 +29,12 @@ export default function Footer() {
                     <Grid xs={5} item>
                         <Logo/>
                         <Typography variatn={'string'} sx={copyRightsSx}>
-                            Copy of <a href="https://preview.colorlib.com/theme/amado/">Theme</a> | Only for learning purposes | This template is made with by Colorlib
+                            Copy of <a href="https://preview.colorlib.com/theme/amado/">Theme</a> | Only for learning
+                            purposes | This template is made with by Colorlib
                         </Typography>
                     </Grid>
                     <Grid item>
-                        <NavList color={'white'} isHorizontal={true} spacing={40}/>
+                        <NavList color={'white'} sx={navListSx} isHorizontal={true} spacing={40}/>
                     </Grid>
                 </Grid>
 
