@@ -1,6 +1,5 @@
 import React from "react"
 import {Link} from "@mui/material"
-import OrangeLine from "../../../components/OrangeLine";
 
 const linkSx = {
     textTransform: "uppercase",
@@ -14,25 +13,17 @@ const linkSx = {
     }
 }
 
-const orangeLineSx = {
-    position: "relative",
-    right: "200px"
 
-}
-
-export default function NavItem({link, name, color, animated}) {
+export default function NavItem({link, name, color}) {
 
     const onClick = () => {
         console.log("transfer to:", link)
     }
 
     return (
-        <React.Fragment>
-            {animated && <OrangeLine sx={orangeLineSx}/>}
-            <Link onClick={onClick} variant={'string'} sx={linkSx} underline={"none"} color={color ?? "black"}>
-                {name}
-            </Link>
-        </React.Fragment>
-
+        <Link onClick={onClick} variant={'string'} sx={linkSx}
+              underline={"none"} color={color ?? "black"}>
+            {name}
+        </Link>
     )
 }

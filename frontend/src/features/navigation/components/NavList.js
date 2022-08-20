@@ -4,19 +4,32 @@ import {List, ListItem} from "@mui/material";
 import menu from "../../../data/menu";
 import mapDictionary from "../../../utils/mapDictionary";
 import NavItem from "./NavItem";
+import SidebarNavItem from "./SidebarNavItem";
+
+const footerSpacingSx = {
+    paddingX: "40px"
+}
 
 
-export default function NavList({color, isHorizontal, spacing, sx, animated}) {
+const footerListSx = {
+    display: "flex",
+    flexDirection: "row",
+}
 
-    const navLinkSpacing = {
-        padding: isHorizontal ? `0 ${spacing}px` : `${spacing}px 0`
-    }
+export default function NavList({sideBar}) {
 
     return (
-        <List sx={sx}>
+        <List sx={!sideBar && footerListSx}>
             {mapDictionary(menu, (item, value) => {
-                    return <ListItem sx={navLinkSpacing}><NavItem animated={animated} link={value} name={item} color={color}/></ListItem>
-                })
+                return (
+                    sideBar ?
+                        <SidebarNavItem link={value} name={item} color={"black"}/>
+                        :
+                        <ListItem sx={footerSpacingSx}>
+                            <NavItem link={value} name={item} color={"white"}/>
+                        </ListItem>
+                )
+            })
 
             }
         </List>

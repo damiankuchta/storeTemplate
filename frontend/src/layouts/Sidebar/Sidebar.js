@@ -4,8 +4,8 @@ import Toolbar from "@mui/material/Toolbar";
 import NavList from "../../features/navigation/components/NavList";
 import Logo from "../../components/Logo";
 import SocialLinks from "../../features/navigation/components/SocialLinks";
-import {Container} from "@mui/material";
 import Box from "@mui/material/Box";
+
 
 
 const boxSx = {
@@ -27,7 +27,7 @@ const sideBarContent = (
     <React.Fragment>
         <Logo color={'black'} sx={logoSx}/>
         <Toolbar/>
-        <NavList sx={navListSx} spacing={20} animated/>
+        <NavList sideBar/>
         <SocialLinks/>
     </React.Fragment>
 )
