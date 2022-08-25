@@ -8,6 +8,10 @@ const newsLetterSx = {
     backgroundColor: '#3c3c3c',
     borderRadius: 0,
     color: "white",
+
+    "@media (max-width:768px)": {
+        padding: "40px"
+    }
 }
 
 const newsLetterHeaderSx = {
@@ -27,9 +31,8 @@ const discountDescriptionSx = {
 export default function Newsletter() {
     return (
         <Box sx={newsLetterSx}>
-            <Container>
-                <Grid container spacing={4} alignItems="center">
-                    <Grid item xs={7}>
+                <Grid container alignItems="center">
+                    <Grid item sx={12} md={6} lg={6}>
                         <Typography sx={newsLetterHeaderSx}>Subscribe for a
                             <Box display={'inline'} sx={discountTextSx}> 25% Discount</Box>
                         </Typography>
@@ -40,11 +43,11 @@ export default function Newsletter() {
                             consectetur.
                             Donec auctor interdum purus, ac finibus massa bibendum nec.</Typography>
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid container item sx={12} md={6} lg={6}>
                         <SignupFom/>
                     </Grid>
                 </Grid>
-            </Container>
+
         </Box>
 
     );

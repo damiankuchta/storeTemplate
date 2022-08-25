@@ -20,15 +20,15 @@ export default function Footer() {
     return (
         <Box as="footer" sx={footerSx}>
             <Container>
-                <Grid spacing={30} container alignItems="center">
-                    <Grid xs={5} item>
+                <Grid container alignItems="center">
+                    <Grid sx={12} md={6} item>
                         <Logo/>
                         <Typography variatn={'string'} sx={copyRightsSx}>
                             Copy of <a href="https://preview.colorlib.com/theme/amado/">Theme</a> | Only for learning
                             purposes | This template is made with by Colorlib
                         </Typography>
                     </Grid>
-                    <Grid item>
+                    <Grid item md={6}>
                         <NavList/>
                     </Grid>
                 </Grid>

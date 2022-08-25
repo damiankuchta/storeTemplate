@@ -4,10 +4,15 @@ import {Button, FormControl, Input} from "@mui/material";
 const formSx = {
     display: "inline-flex",
     flexDirection: "row",
-    width: 450,
+    width: "100%",
     boxSizing: "unset",
     border: "2px solid transparent",
     outline: "1px solid transparent",
+    paddingLeft: "60px",
+    "@media (max-width:1024px)": {
+        paddingLeft: "0",
+        paddingTop: "40px"
+    }
 }
 
 const formOutline = {
@@ -17,7 +22,7 @@ const formOutline = {
 }
 
 const emialInputSx = {
-    width: 435,
+    width: "100%",
     height: 50,
     backgroundColor: "white",
     color: 'black',

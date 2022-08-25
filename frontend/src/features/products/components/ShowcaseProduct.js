@@ -5,10 +5,10 @@ import OrangeLine from "../../../components/OrangeLine";
 const transitionTime = "0.3s"
 
 const mainBoxSx = {
+    position: "relative",
     width: "100%",
-    height: "100%",
-
     cursor: "pointer",
+
     "&:hover > img": {
         transition: transitionTime,
         filter: "grayscale(100%) brightness(0.4) contrast(80%)",
@@ -22,18 +22,17 @@ const mainBoxSx = {
 
 const imgSx = {
     width: "100%",
-    height: "100%",
     transition: transitionTime,
 }
 
 const headerBoxSx = {
     position: "absolute",
     marginTop: "30px",
-    marginLeft: "40px",
+    left: "40px",
+    right: "40px",
     zIndex: 1,
     backgroundColor: "rgba(255, 255, 255, 0.4)",
     borderRadius: "5px",
-    width: "410px",
     padding: "10px"
 }
 
