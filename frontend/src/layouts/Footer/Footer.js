@@ -23,7 +23,7 @@ export default function Footer() {
                 <Grid container alignItems="center">
                     <Grid sx={12} md={6} item>
                         <Logo/>
-                        <Typography variatn={'string'} sx={copyRightsSx}>
+                        <Typography variant={'string'} sx={copyRightsSx}>
                             Copy of <a href="https://preview.colorlib.com/theme/amado/">Theme</a> | Only for learning
                             purposes | This template is made with by Colorlib
                         </Typography>
