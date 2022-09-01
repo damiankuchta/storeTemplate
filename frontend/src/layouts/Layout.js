@@ -33,8 +33,6 @@ export default function Layout({children}) {
                     <Footer/>
                 </Box>
 
-
-
         </React.Fragment>
     );
 }

@@ -7,6 +7,7 @@ const mainPictureSx = {
 }
 
 const smallPictureSx = {
+    border: "3px solid transparent",
     width: "24%",
 }
 
@@ -29,8 +30,8 @@ export default function Pictures({variant, products, setCurrentVariant}) {
         <React.Fragment>
             <Image src={variant.image} sx={mainPictureSx}/>
             <List sx={imagesListSx}>
-                {products.variants.map(({image}, index) => {
-                    return <Image sx={smallPictureSx} src={image} as={'img'}
+                {products.variants.map(({image, variantId}, index) => {
+                    return <Image sx={variant.variantId === variantId  ? {...smallPictureSx, border: "3px solid orange"} : smallPictureSx} src={image} as={'img'}
                                   onClick={() => changeCurrentVariant(index)}/>
                 })}
             </List>
