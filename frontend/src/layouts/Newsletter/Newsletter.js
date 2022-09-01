@@ -4,7 +4,7 @@ import SignupFom from "../../features/newsletter/components/SignupFom";
 import {Container, Grid, Typography} from "@mui/material";
 
 const newsLetterSx = {
-    padding: '150px',
+    padding: '100px ',
     backgroundColor: '#3c3c3c',
     borderRadius: 0,
     color: "white",
@@ -31,6 +31,7 @@ const discountDescriptionSx = {
 export default function Newsletter() {
     return (
         <Box sx={newsLetterSx}>
+            <Container>
                 <Grid container alignItems="center">
                     <Grid item sx={12} md={6} lg={6}>
                         <Typography sx={newsLetterHeaderSx}>Subscribe for a
@@ -47,6 +48,7 @@ export default function Newsletter() {
                         <SignupFom/>
                     </Grid>
                 </Grid>
+            </Container>
 
         </Box>
 
