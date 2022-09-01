@@ -1,7 +1,7 @@
 import React from "react"
 import {Box, Grid} from "@mui/material";
 import ShowcaseProduct from "./ShowcaseProduct";
-import {randomPicture} from "../../../utils/randomPicture";
+import {randomPicture} from "../../../../utils/randomPicture";
 
 const mainBoxSx = {
     width: "100%",
