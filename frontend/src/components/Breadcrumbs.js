@@ -1,7 +1,7 @@
 import React from "react"
 import {Breadcrumbs, Link} from "@mui/material";
 
-export default function BreadCrumbs({title}) {
+export default function Breadcrumbs({title}) {
 
     return (
         <Breadcrumbs>

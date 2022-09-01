@@ -1,6 +1,6 @@
 import React from "react"
 import {Box, Typography} from "@mui/material";
-import OrangeLine from "../../../../components/OrangeLine";
+import OrangeLine from "../../../components/OrangeLine";
 
 const transitionTime = "0.3s"
 

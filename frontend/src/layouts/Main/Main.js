@@ -1,5 +1,5 @@
 import React from "react"
-import {Product, ShowCaseList} from "../../features/products/index";
+import Product from "../../pages/Product"
 
 export default function Main() {
 

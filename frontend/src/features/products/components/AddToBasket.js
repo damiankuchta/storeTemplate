@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import {Button} from "@mui/material";
-import QuantityPicker from "../../../../components/QuantityPicker";
+import QuantityPicker from "../../../components/QuantityPicker";
 import Box from "@mui/material/Box";
 
 const addToBaskerSx = {

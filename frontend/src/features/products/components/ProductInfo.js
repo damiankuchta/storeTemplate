@@ -1,9 +1,9 @@
 import React from "react"
 import {Typography} from "@mui/material";
 import Box from "@mui/material/Box";
-import StarsRaiting from "./StarsRaiting";
-import IsInStock from "./IsInStock";
-import PriceTag from "./PriceTag";
+import StarsRaiting from "./ProductInfo/StarsRaiting";
+import IsInStock from "./ProductInfo/IsInStock";
+import PriceTag from "./ProductInfo/PriceTag";
 
 const topHolderSx = {
     marginBottom: "40px",
