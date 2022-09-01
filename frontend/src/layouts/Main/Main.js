@@ -1,7 +1,5 @@
 import React from "react"
-import ShowCaseList from "../../features/products/components/Home/ShowCaseList";
-import Product from "../../features/products/components/Product/Product";
-
+import {Product, ShowCaseList} from "../../features/products/index";
 
 export default function Main() {
 
