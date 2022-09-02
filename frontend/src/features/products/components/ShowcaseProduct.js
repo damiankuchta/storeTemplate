@@ -35,28 +35,26 @@ const priceTextSx = {
     transition: transitionTime,
 }
 
+const mainBoxSx = {
+    position: "relative",
+    overflow: "hidden",
+    cursor: "pointer",
+
+    "&:hover > img": {
+        transition: transitionTime,
+        filter: "grayscale(100%) brightness(0.4) contrast(80%)",
+    },
+
+    "&:hover > div > p, &:hover > div> h5": {
+        transition: transitionTime,
+        color: "white"
+    },
+}
+
 export default function ShowcaseProduct({src, alt, productName, fromPrice, sx, isBigger}) {
 
-    const mainBoxSx = {
-        position: "relative",
-        overflow: "hidden",
-        cursor: "pointer",
-        height: isBigger ? "580px" : "410px",
-
-        "&:hover > img": {
-            transition: transitionTime,
-            filter: "grayscale(100%) brightness(0.4) contrast(80%)",
-        },
-
-        "&:hover > div > p, &:hover > div> h5": {
-            transition: transitionTime,
-            color: "white"
-        },
-        ...sx
-    }
-
     return (
-        <Box sx={mainBoxSx}>
+        <Box sx={{...mainBoxSx, ...sx, height: isBigger ?  "580px" : "410px"}}>
             <Box sx={headerBoxSx}>
                 <OrangeLine/>
                 {fromPrice && <Typography sx={priceTextSx}>From ${fromPrice}</Typography>}

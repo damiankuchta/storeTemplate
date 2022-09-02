@@ -2,6 +2,8 @@ import React, {useState} from "react"
 import {Button} from "@mui/material";
 import QuantityPicker from "../../../components/QuantityPicker";
 import Box from "@mui/material/Box";
+import {useDispatch} from "react-redux";
+import {addItem, removeItem} from "../../cart/cartSlice";
 
 const addToBaskerSx = {
     "& > *": {
@@ -22,11 +24,12 @@ const buttonSx = {
 
 export default function AddToBasket({variant}) {
 
+    const dispatch = useDispatch()
+
     const [quantity, setQuantity] = useState(1);
 
     const addToBasketClick = () => {
-        console.log("add variant:", variant)
-        console.log("quantity: ", quantity)
+        dispatch(addItem({variant: variant, quantity: quantity}))
     }
 
     return (
