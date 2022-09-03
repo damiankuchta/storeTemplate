@@ -1,36 +1,48 @@
 import {randomPicture} from "../utils/randomPicture";
-import { LoremIpsum } from "lorem-ipsum";
+import {LoremIpsum} from "lorem-ipsum";
 
 const lorem = new LoremIpsum({
-  sentencesPerParagraph: {
-    max: 8,
-    min: 4
-  },
-  wordsPerSentence: {
-    max: 16,
-    min: 4
-  }
+    sentencesPerParagraph: {
+        max: 8,
+        min: 4
+    },
+    wordsPerSentence: {
+        max: 16,
+        min: 4
+    }
 });
 
-class randomVariant {
-    constructor() {
+export class randomVariant {
+    constructor(title) {
         this.variantID = Math.floor((Math.random() * 100))
         this.price = Math.floor((Math.random() * 300))
         this.image = randomPicture()
         this.isInStock = Math.random() >= 0.3
-        this.subtitle = lorem.generateWords(Math.floor((Math.random() * 2) + 1))
+        this.title = title + ` (${lorem.generateWords(Math.floor((Math.random() * 2) + 1))})`
     }
+
+    toJSON() {
+        const {variantID, price, image, isInStock, title} = this
+        return {variantID, price, image, isInStock, title}
+
+    }
+
 }
 
 export class randomProduct {
     constructor() {
         this.title = lorem.generateWords(Math.floor((Math.random() * 3) + 1))
-        this.raiting = Math.floor(Math.random() * 6)
+        this.rating = Math.floor(Math.random() * 6)
         this.description = lorem.generateParagraphs(Math.floor((Math.random() * 7) + 1))
         this.productID = Math.floor((Math.random() * 100))
-        this.variants = [...Array((Math.floor(Math.random() * 8 ))+ 1).keys()].map(() => (new randomVariant()))
+        this.variants = [...Array((Math.floor(Math.random() * 8)) + 1).keys()].map(() => (new randomVariant(this.title)).toJSON())
         this.fromPrice = Math.min(...this.variants.map(item => (item.price)))
+    }
+
+    toJSON() {
+        const {title, rating, description, productID, variants, fromPrice} = this
+        return {title, rating, description, productID, variants, fromPrice}
     }
 }
 
-export const productsList = [...Array(Math.floor(Math.random() * 50 )+ 10)].map(() => ( new randomProduct()))
+export const productsList = [...Array(Math.floor(Math.random() * 50) + 10)].map(() => (new randomProduct()))

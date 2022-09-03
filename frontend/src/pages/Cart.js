@@ -1,19 +1,31 @@
-import {Box} from "@mui/material";
-import {useDispatch, useSelector} from "react-redux";
+import {Box, Grid} from "@mui/material";
+import {useSelector} from "react-redux";
 import {itemsSelector} from "../features/cart";
+import CartItem from "../features/cart/components/CartItem";
+
 
 export default function Cart() {
 
-    const dispatch = useDispatch()
     const items = useSelector(itemsSelector)
-
-    console.log(items)
 
     return (
         <Box>
-            {items.map((item) => {
-                return item.title
-            })}
+            <Grid container>
+                <Grid item xs={8}>
+                    <Grid item container>
+                        <Grid item xs={3}></Grid>
+                        <Grid item xs={3}>Name</Grid>
+                        <Grid item xs={3}>Price</Grid>
+                        <Grid item xs={3}>Quantity</Grid>
+                    </Grid>
+                    {items.map((item) => {
+                        return <CartItem item={item}/>
+                    })}
+                </Grid>
+                <Grid item xs={4}>
+
+                </Grid>
+            </Grid>
         </Box>
     )
 }

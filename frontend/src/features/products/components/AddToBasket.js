@@ -22,14 +22,14 @@ const buttonSx = {
     },
 }
 
-export default function AddToBasket({currentVariant, product}) {
+export default function AddToBasket({currentVariant}) {
 
     const dispatch = useDispatch()
 
     const [quantity, setQuantity] = useState(1);
 
     const addToBasketClick = () => {
-        dispatch(addItem({quantity: quantity, variantID: currentVariant.variantID, product: JSON.stringify(product)}))
+        dispatch(addItem({quantity: quantity, product: currentVariant}))
     }
 
     return (
