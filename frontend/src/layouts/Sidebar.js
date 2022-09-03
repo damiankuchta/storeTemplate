@@ -1,9 +1,9 @@
 import React from 'react';
 import Drawer from '@mui/material/Drawer';
 import Toolbar from "@mui/material/Toolbar";
-import NavList from "../../features/navigation/components/NavList";
-import Logo from "../../components/Logo";
-import SocialLinks from "../../features/navigation/components/SocialLinks";
+import NavList from "../features/navigation/components/NavList";
+import Logo from "../components/Logo";
+import SocialLinks from "../features/navigation/components/SocialLinks";
 import Box from "@mui/material/Box";
 
 

@@ -1,6 +1,7 @@
 import React from "react"
 import {Box, Typography} from "@mui/material";
 import OrangeLine from "../../../components/OrangeLine";
+import {useNavigate} from "react-router-dom";
 
 const transitionTime = "0.3s"
 
@@ -51,16 +52,22 @@ const mainBoxSx = {
     },
 }
 
-export default function ShowcaseProduct({src, alt, productName, fromPrice, sx, isBigger}) {
+export default function ShowcaseProduct({alt, product, sx, isBigger}) {
+
+    const navigation = useNavigate()
+
+    const transferToProduct = () => {
+        navigation("product/" + product.productID, {replace: true})
+    }
 
     return (
-        <Box sx={{...mainBoxSx, ...sx, height: isBigger ?  "580px" : "410px"}}>
+        <Box onClick={transferToProduct} sx={{...mainBoxSx, ...sx, height: isBigger ? "580px" : "410px"}}>
             <Box sx={headerBoxSx}>
                 <OrangeLine/>
-                {fromPrice && <Typography sx={priceTextSx}>From ${fromPrice}</Typography>}
-                {productName && <Typography sx={nameTextSx} variant={'h5'}>{productName}</Typography>}
+                {product.fromPrice && <Typography sx={priceTextSx}>From ${product.fromPrice}</Typography>}
+                {product.title && <Typography sx={nameTextSx} variant={'h5'}>{product.title}</Typography>}
             </Box>
-            <Box component={'img'} sx={imgSx} src={src} alt={alt || 'no image'}/>
+            <Box component={'img'} sx={imgSx} src={product.variants[0].image} alt={alt || 'no image'}/>
         </Box>
     )
 }

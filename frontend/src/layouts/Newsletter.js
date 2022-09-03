@@ -1,6 +1,6 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import SignupFom from "../../features/newsletter/components/SignupFom";
+import SignupFom from "../features/newsletter/components/SignupFom";
 import {Container, Grid, Typography} from "@mui/material";
 
 const newsLetterSx = {

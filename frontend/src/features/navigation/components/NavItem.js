@@ -1,5 +1,6 @@
 import React from "react"
 import {Link} from "@mui/material"
+import {useNavigate} from "react-router-dom";
 
 const linkSx = {
     textTransform: "uppercase",
@@ -14,14 +15,10 @@ const linkSx = {
 }
 
 
-export default function NavItem({link, name, color}) {
-
-    const onClick = () => {
-        console.log("transfer to:", link)
-    }
+export default function NavItem({name, color}) {
 
     return (
-        <Link onClick={onClick} variant={'string'} sx={linkSx}
+        <Link variant={'string'} sx={linkSx}
               underline={"none"} color={color ?? "black"}>
             {name}
         </Link>

@@ -1,10 +1,19 @@
-import React from "react"
+import {Box} from "@mui/material";
+import {useDispatch, useSelector} from "react-redux";
+import {itemsSelector} from "../features/cart";
 
 export default function Cart() {
 
-    return (
-        <React.Fragment>
+    const dispatch = useDispatch()
+    const items = useSelector(itemsSelector)
 
-        </React.Fragment>
+    console.log(items)
+
+    return (
+        <Box>
+            {items.map((item) => {
+                return item.title
+            })}
+        </Box>
     )
 }

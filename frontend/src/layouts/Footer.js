@@ -1,8 +1,8 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import Logo from "../../components/Logo";
+import Logo from "../components/Logo";
 import {Container, Grid, Typography} from "@mui/material";
-import {NavList} from "../../features/navigation";
+import {NavList} from "../features/navigation";
 
 
 const footerSx = {
@@ -24,7 +24,7 @@ export default function Footer() {
                     <Grid sx={12} md={6} item>
                         <Logo/>
                         <Typography variant={'string'} sx={copyRightsSx}>
-                            Copy of <a href="https://preview.colorlib.com/theme/amado/">Theme</a> | Only for learning
+                            Copy of <a href="frontend/src/layouts/Footer">Theme</a> | Only for learning
                             purposes | This template is made with by Colorlib
                         </Typography>
                     </Grid>

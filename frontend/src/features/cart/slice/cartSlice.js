@@ -12,8 +12,7 @@ export const cartSlice = createSlice({
             const item = action.payload
 
             //find if item is already in the array, if it is, swap it with new data, if not add it into array
-
-            const index = state.items.findIndex(i => (i.variant.variantId === item.variant.variantId))
+            const index = state.items.findIndex(i => (i.variantID === item.variantID))
             if (index > -1) {
                 state.items[index] = item
             } else {
@@ -23,7 +22,7 @@ export const cartSlice = createSlice({
         },
         removeItem: (state, action) => {
 
-            const index = state.items.findIndex(i => (i.variantId === action.payload.item.variantId))
+            const index = state.items.findIndex(i => (i.variantID === action.payload.variantID))
             if (index > -1) {
                 state.items.splice(index, 1)
             } else {
@@ -33,6 +32,6 @@ export const cartSlice = createSlice({
 
     }
 })
-
+export const itemsSelector = state => state.cart.items
 export const {addItem, removeItem} = cartSlice.actions
 export default cartSlice.reducer

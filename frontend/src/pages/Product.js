@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from "react"
 import {Grid} from "@mui/material";
-import product from "../data/productData"
+import {randomProduct} from "../data/productData"
 import {ProductInfo, AddToBasket, Pictures} from "../features/products/index";
 import Box from "@mui/material/Box";
 import OrangeLine from "../components/OrangeLine";
+import {useParams} from "react-router-dom";
 
 const productBoxSx = {
     padding: "10px",
@@ -13,27 +14,31 @@ const productBoxSx = {
 
 export default function Product() {
 
-    const [products, setProducts] = useState(product)
+    const [useProducts, setProducts] = useState(new randomProduct())
     const [currentVariant, setCurrentVariant] = useState({})
+    let { id } = useParams();
 
     useEffect(() => {
-        setCurrentVariant(product.variants[0])
-    }, [product])
+        setCurrentVariant(useProducts.variants[0])
+    }, [])
+
+    useEffect(() => {
+        console.log('fetch product by id', id)
+    }, [])
 
     return (
         <Box sx={productBoxSx}>
             {/*todo: <Breadcrumbs title={products.title}/>*/}
             <Grid container spacing={10}>
                 <Grid xs={12} md={7} item>
-                    <Pictures variant={currentVariant}
-                              products={products}
+                    <Pictures currentVariant={currentVariant} variants={useProducts.variants}
                               setCurrentVariant={setCurrentVariant}/>
                 </Grid>
 
                 <Grid xs={12} md={5} item>
                     <OrangeLine/>
-                    <ProductInfo product={product} currentVariatn={currentVariant}/>
-                    <AddToBasket variant={currentVariant}/>
+                    <ProductInfo currentVariatn={currentVariant} product={useProducts} />
+                    <AddToBasket currentVariant={currentVariant} product={useProducts}/>
                 </Grid>
             </Grid>
         </Box>

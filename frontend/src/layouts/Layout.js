@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import Sidebar from './Sidebar/Sidebar';
-import Newsletter from './Newsletter/Newsletter';
-import Footer from './Footer/Footer';
-import Navbar from './Navbar/Navbar';
+import Sidebar from './Sidebar';
+import Newsletter from './Newsletter';
+import Footer from './Footer';
+import Navbar from './Navbar';
 
-import Main from './Main/Main';
+import Main from './Main';
 
 import Box from "@mui/material/Box";
 
