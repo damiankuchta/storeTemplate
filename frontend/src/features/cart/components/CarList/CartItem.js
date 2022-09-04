@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react"
-import Image from "../../../components/Image"
+import Image from "../../../../components/Image"
 import {Container, Grid} from "@mui/material";
-import QuantityPicker from "../../../components/QuantityPicker";
+import QuantityPicker from "../../../../components/QuantityPicker";
 import {useDispatch} from "react-redux";
-import {addItem} from "../cartSlice";
+import {addItem} from "../../cartSlice";
 
 const cartItemSx = {
     marginBottom: "10px",

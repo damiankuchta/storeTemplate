@@ -1,9 +1,9 @@
 import React, {useState} from "react"
-import {Button} from "@mui/material";
 import QuantityPicker from "../../../components/QuantityPicker";
 import Box from "@mui/material/Box";
 import {useDispatch} from "react-redux";
 import {addItem} from "../../cart/index";
+import Button from "../../../components/Button";
 
 const addToBaskerSx = {
     "& > *": {
@@ -12,14 +12,8 @@ const addToBaskerSx = {
 }
 
 const buttonSx = {
-    backgroundColor: "orange",
-    color: "white",
     width: "310px",
     height: "80px",
-
-    "&:hover": {
-        backgroundColor: "black",
-    },
 }
 
 export default function AddToBasket({currentVariant}) {

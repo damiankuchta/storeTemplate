@@ -1,6 +1,6 @@
 import React from "react"
 import {Container, Grid} from "@mui/material";
-import CartItem from "./CartItem";
+import CartItem from "./CarList/CartItem";
 
 const headerSx = {
     backgroundColor: "#f5f7fa",

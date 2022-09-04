@@ -16,7 +16,6 @@ export class randomVariant {
         return {variantID, price, image, isInStock, title}
 
     }
-
 }
 
 export class randomProduct {
