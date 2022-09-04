@@ -1,28 +1,25 @@
-import {Box, Grid} from "@mui/material";
+import {Box, Grid, Typography} from "@mui/material";
 import {useSelector} from "react-redux";
 import {itemsSelector} from "../features/cart";
-import CartItem from "../features/cart/components/CartItem";
+import CartList from "../features/cart/components/CartList";
 
+const carstSx = {
+    marginTop: "150px",
+    marginBottom: "150px"
+}
 
 export default function Cart() {
 
     const items = useSelector(itemsSelector)
 
     return (
-        <Box>
+        <Box sx={carstSx}>
+            <Typography margin={"20px"} variant={"h4"}>Shopping Cart</Typography>
             <Grid container>
-                <Grid item xs={8}>
-                    <Grid item container>
-                        <Grid item xs={3}></Grid>
-                        <Grid item xs={3}>Name</Grid>
-                        <Grid item xs={3}>Price</Grid>
-                        <Grid item xs={3}>Quantity</Grid>
-                    </Grid>
-                    {items.map((item) => {
-                        return <CartItem item={item}/>
-                    })}
+                <Grid item xs={9}>
+                    <CartList items={items}/>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={3}>
 
                 </Grid>
             </Grid>

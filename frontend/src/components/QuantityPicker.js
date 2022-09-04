@@ -4,7 +4,7 @@ import {Input, Typography} from "@mui/material";
 import {ArrowDropDown, ArrowDropUp} from "@mui/icons-material";
 
 
-export default function QuantityPicker({quantity, setQuantity}) {
+export default function QuantityPicker({quantity, setQuantity, allowZero = false}) {
 
     const [isSelected, setIsSelected] = useState(false);
 
@@ -57,14 +57,21 @@ export default function QuantityPicker({quantity, setQuantity}) {
     const changeQuantity = (quantity) => {
         setQuantity(old => {
             const total = old + quantity
-            return (total > 1 ? total : 1)
+            if (!allowZero) {
+                return (total > 1 ? total : 1)
+            }
+            return (total > 0 ? total : 0)
+
         })
     }
 
     const typeInQuantity = (event) => {
         setQuantity(() => {
             const value = event.target.value
-            return (value > 1 ? value : 1)
+            if (!allowZero) {
+                return (value > 1 ? value : 1)
+            }
+            return (value > 0 ? value : 0)
         })
     }
 
