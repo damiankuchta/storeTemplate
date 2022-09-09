@@ -42,7 +42,7 @@ export default function SidebarNavItem({name, link}) {
     return (
         <ListItem onClick={onClick} sx={listItemSx} onMouseLeave={onMouseLeave} onMouseEnter={onMouseEnter}>
             <OrangeLine sx={hover ? selectedOrangeLineSx : orangeLineSx}/>
-            <NavItem color={hover ? "orange" : "black"} name={name}/>
+            <NavItem color={hover ? "orange" : "black"} name={name} upperCase/>
         </ListItem>
 
     )

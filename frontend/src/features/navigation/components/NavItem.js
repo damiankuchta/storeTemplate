@@ -1,16 +1,15 @@
 import React from "react"
 import {Link} from "@mui/material"
 import {useNavigate} from "react-router-dom";
+import HighlightedText from "../../../components/HighlightedText";
 
 const linkSx = {
     textTransform: "uppercase",
+    fontWeight: 600,
     cursor: "pointer",
-    transitionDuration: "0.4s",
-    fontWeight: 500,
 
-    "&:hover": {
-        transitionDuration: "0.4s",
-        color: "orange",
+    "& > * ": {
+        fontWeight: 600
     }
 }
 
@@ -18,9 +17,8 @@ const linkSx = {
 export default function NavItem({name, color}) {
 
     return (
-        <Link variant={'string'} sx={linkSx}
-              underline={"none"} color={color ?? "black"}>
-            {name}
+        <Link variant={'string'} underline={"none"} color={color ?? "black"}>
+            <HighlightedText sx={linkSx}>{name}</HighlightedText>
         </Link>
     )
 }

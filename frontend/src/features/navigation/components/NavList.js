@@ -26,7 +26,7 @@ export default function NavList({sideBar}) {
                         <SidebarNavItem link={value} name={item} color={"black"}/>
                         :
                         <ListItem sx={footerSpacingSx}>
-                            <NavItem link={value} name={item} color={"white"}/>
+                            <NavItem link={value} name={item} color={"white"} upperCase/>
                         </ListItem>
                 )
             })
