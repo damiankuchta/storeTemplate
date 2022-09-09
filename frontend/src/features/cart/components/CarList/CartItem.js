@@ -9,7 +9,8 @@ const cartItemSx = {
     marginBottom: "10px",
     alignItems: "center",
     fontSize: "20px",
-    fontWeight: "600"
+    fontWeight: "600",
+    maxWidth: "98%"
 }
 
 const imageSx = {
@@ -26,9 +27,9 @@ export default function CartItem({item}) {
     }, [quantity])
 
     return (
-        <Grid container item columns={17} sx={cartItemSx}>
-            <Grid xs={4} marginRight={"35px"}> <Image sx={imageSx} src={item.product.image}/></Grid>
-            <Grid xs={4}> {item.product.title}</Grid>
+        <Grid container item columns={18} sx={cartItemSx}>
+            <Grid xs={4}> <Image sx={imageSx} src={item.product.image}/></Grid>
+            <Grid xs={4}  paddingX={"20px"}> {item.product.title}</Grid>
             <Grid xs={4}> ${item.product.price}</Grid>
             <Grid xs={4}> <QuantityPicker quantity={quantity} setQuantity={setQuantity} allowZero/></Grid>
         </Grid>

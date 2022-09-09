@@ -4,12 +4,11 @@ import CartItem from "./CarList/CartItem";
 
 const headerSx = {
     backgroundColor: "#f5f7fa",
-    padding: "15px",
-    margin: "7px",
-    marginBottom: "18px",
+    padding: "15px 0",
+    margin:  "7px 0 18px 0",
     fontSize: "13px",
-    fontWeight: "600"
-
+    fontWeight: "600",
+    maxWidth: "98%"
 }
 
 
@@ -17,8 +16,8 @@ export default function CartList({items}) {
     return (
         <React.Fragment>
             <Grid item container sx={headerSx} columns={17}>
-                <Grid item xs={4} marginRight={"35px"}></Grid>
-                <Grid item xs={4}>Name</Grid>
+                <Grid item xs={4}></Grid>
+                <Grid item xs={4} paddingX={"20px"}>Name</Grid>
                 <Grid item xs={4}>Price</Grid>
                 <Grid item xs={4}>Quantity</Grid>
             </Grid>

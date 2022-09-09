@@ -17,10 +17,10 @@ export default function Cart() {
         <Box sx={carstSx}>
             <Typography margin={"20px"} variant={"h4"}>Shopping Cart</Typography>
             <Grid container>
-                <Grid item xs={9}>
+                <Grid item xs={12} lg={8}>
                     <CartList items={items}/>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={12} lg={4}>
                     <CartTotal items={items}/>
                 </Grid>
             </Grid>
