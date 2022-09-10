@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react"
 import FilterMenu from "../features/shop/components/FilterMenu";
 import {Grid} from "@mui/material";
 import brands from "../data/brands";
+import colors from "../data/colors";
 
 
 export default function Shop() {
@@ -9,7 +10,7 @@ export default function Shop() {
     const [filters, setFilters] = useState({
         brands: {},
         category: "",
-        colors: [],
+        colors: {},
         price: [1, 1000],
     })
 
@@ -17,13 +18,22 @@ export default function Shop() {
     const [sortBy, setSortBy] = useState("Date")
     const [view, setView] = useState(12)
 
-    //set brands
+    //set brands dict
     useEffect(() => {
         let newBrands = filters.brands
         brands.forEach(item => {
             newBrands[item] = true
         })
         setFilterField({brands: newBrands})
+    }, [])
+
+    //set colors dict
+    useEffect(() => {
+        let newColors = filters.colors
+        colors.forEach(item => {
+            newColors[item] = true
+        })
+        setFilterField({colors: newColors})
     }, [])
 
     const setFilterField = (value) => {
@@ -35,7 +45,8 @@ export default function Shop() {
     return (
 
         <Grid container columns={20}>
-            <Grid xs={20} md={7} lg={5} xl={3}><FilterMenu {...filters} setFilterField={setFilterField} setFilters={setFilters}/></Grid>
+            <Grid xs={20} md={7} lg={5} xl={3}><FilterMenu {...filters} setFilterField={setFilterField}
+                                                           setFilters={setFilters}/></Grid>
             <Grid></Grid>
         </Grid>
     )

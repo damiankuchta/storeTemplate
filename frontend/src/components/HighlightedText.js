@@ -9,8 +9,12 @@ const linkSx = {
     }
 }
 
-export default function HighlightedText({children, sx}) {
-    return <Typography sx={{...sx, ...linkSx}}>
-        {children}
-    </Typography>
+const selectedSx = {
+    color: "orange"
+}
+
+export default function HighlightedText({children, sx, selected, onClick}) {
+
+    return <Typography onClick={onClick} sx={{...sx, ...linkSx, ...(selected && selectedSx)}}>{children}</Typography>
+
 }

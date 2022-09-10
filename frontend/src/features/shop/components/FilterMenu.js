@@ -17,9 +17,9 @@ export default function FilterMenu({brands, category, colors, price, setFilterFi
 
     return (
         <Box sx={filterMenuSx}>
-            <Categories setFilterField={setFilterField}/>
+            <Categories category={category} setFilterField={setFilterField}/>
             <Brands brands={brands} setFilters={setFilters}/>
-            <ColorList setFilterField={setFilterField}/>
+            <ColorList colors={colors} setFilterField={setFilterField}/>
             <PriceRange price={price} setFilterField={setFilterField}/>
         </Box>
     )
