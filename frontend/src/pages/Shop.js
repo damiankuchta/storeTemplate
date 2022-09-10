@@ -3,6 +3,7 @@ import FilterMenu from "../features/shop/components/FilterMenu";
 import {Grid} from "@mui/material";
 import brands from "../data/brands";
 import colors from "../data/colors";
+import ProductList from "../features/shop/components/ProductList";
 
 
 export default function Shop() {
@@ -43,11 +44,10 @@ export default function Shop() {
     }
 
     return (
-
-        <Grid container columns={20}>
-            <Grid xs={20} md={7} lg={5} xl={3}><FilterMenu {...filters} setFilterField={setFilterField}
+        <Grid container columns={40}>
+            <Grid width={"230px"} xs={40} sm={10} md={10} lg={8} xl={6} item><FilterMenu {...filters} setFilterField={setFilterField}
                                                            setFilters={setFilters}/></Grid>
-            <Grid></Grid>
+            <Grid xs={40} sm={30} md={30} lg={32} xs={34} item><ProductList/></Grid>
         </Grid>
     )
 }

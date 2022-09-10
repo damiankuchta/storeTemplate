@@ -10,7 +10,11 @@ const filterMenuSx = {
     boxSizing: "border-box",
     width: "100%",
     height: "100%",
-    paddingX: "50px"
+    padding: "0 60px 0 40px",
+
+    "&> *": {
+        paddingY: "20px",
+    }
 }
 
 export default function FilterMenu({brands, category, colors, price, setFilterField, setFilters}) {
