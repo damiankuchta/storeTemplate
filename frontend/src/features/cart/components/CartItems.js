@@ -4,6 +4,7 @@ import {useDispatch} from "react-redux";
 import {addItem} from "../cartSlice";
 import Image from "../../../components/Image";
 import QuantityPicker from "../../../components/QuantityPicker";
+import ArrayList from "../../../components/ArrayList";
 
 const headerSx = {
     backgroundColor: "#f5f7fa",
@@ -14,7 +15,7 @@ const headerSx = {
     maxWidth: "98%"
 }
 
-export default function CartItems({items}) {
+export default function CartItems({cartItems}) {
     return (
         <React.Fragment>
             <Grid item container sx={headerSx} columns={17}>
@@ -23,11 +24,7 @@ export default function CartItems({items}) {
                 <Grid item xs={4}>Price</Grid>
                 <Grid item xs={4}>Quantity</Grid>
             </Grid>
-            {
-                items.map((item) => {
-                    return <CartItem item={item}/>
-                })
-            }
+            <ArrayList array={cartItems} itemComponent={<CartItem/>}/>
         </React.Fragment>
     )
 }

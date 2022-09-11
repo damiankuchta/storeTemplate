@@ -11,17 +11,17 @@ const carstSx = {
 
 export default function Cart() {
 
-    const items = useSelector(itemsSelector)
+    const cartItems = useSelector(itemsSelector)
 
     return (
         <Box sx={carstSx}>
             <Typography margin={"20px"} variant={"h4"}>Shopping Cart</Typography>
             <Grid container>
                 <Grid item xs={12} lg={8}>
-                    <CartItems items={items}/>
+                    <CartItems cartItems={cartItems}/>
                 </Grid>
                 <Grid item xs={12} lg={4}>
-                    <CartTotal items={items}/>
+                    <CartTotal items={cartItems}/>
                 </Grid>
             </Grid>
         </Box>
