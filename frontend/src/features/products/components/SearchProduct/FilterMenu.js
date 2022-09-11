@@ -3,7 +3,7 @@ import {Box} from "@mui/material";
 import PriceRange from "./FilterMenu/PriceRange";
 import Brands from "./FilterMenu/Brands";
 import {Categories} from "./FilterMenu/Categories";
-import ColorList from "./FilterMenu/ColorList";
+import Colors from "./FilterMenu/Colors";
 
 const filterMenuSx = {
     backgroundColor: "#f5f7fa",
@@ -23,7 +23,7 @@ export default function FilterMenu({brands, category, colors, price, setFilterFi
         <Box sx={filterMenuSx}>
             <Categories category={category} setFilterField={setFilterField}/>
             <Brands brands={brands} setFilters={setFilters}/>
-            <ColorList colors={colors} setFilterField={setFilterField}/>
+            <Colors colors={colors} setFilterField={setFilterField}/>
             <PriceRange price={price} setFilterField={setFilterField}/>
         </Box>
     )

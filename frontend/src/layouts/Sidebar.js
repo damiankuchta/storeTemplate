@@ -1,11 +1,10 @@
 import React from 'react';
 import Drawer from '@mui/material/Drawer';
 import Toolbar from "@mui/material/Toolbar";
-import NavList from "../features/navigation/components/NavList";
 import Logo from "../components/Logo";
 import SocialLinks from "../features/navigation/components/SocialLinks";
 import Box from "@mui/material/Box";
-
+import SidebarNav from "../features/navigation/components/SidebarNav";
 
 
 const boxSx = {
@@ -15,22 +14,11 @@ const boxSx = {
 
 }
 
-const logoSx ={
+const logoSx = {
     width: "100%"
 }
 
-const navListSx = {
-    paddingLeft: "90px"
-}
 
-const sideBarContent = (
-    <React.Fragment>
-        <Logo color={'black'} sx={logoSx}/>
-        <Toolbar/>
-        <NavList sideBar/>
-        <SocialLinks/>
-    </React.Fragment>
-)
 
 export default function Sidebar({isDrawerDisplayed, setIsDrawerDisplayed}) {
 
@@ -42,14 +30,20 @@ export default function Sidebar({isDrawerDisplayed, setIsDrawerDisplayed}) {
     return (
         <aside>
             <Box sx={boxSx}>
-                {sideBarContent}
+                <Logo color={'black'} sx={logoSx}/>
+                <Toolbar/>
+                <SidebarNav/>
+                <SocialLinks/>
             </Box>
             <Drawer
                 variant={'temporary'}>
                 open={isDrawerDisplayed}
                 onClose={handleDrawerClose}
                 modelProps={{keepMounted: true}}>
-                {sideBarContent}
+                <Logo color={'black'} sx={logoSx}/>
+                <Toolbar/>
+                <SidebarNav/>
+                <SocialLinks/>
             </Drawer>
         </aside>
     );

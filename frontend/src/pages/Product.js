@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from "react"
 import {Grid} from "@mui/material";
 import {randomProduct} from "../data/productData"
-import {ProductInfo, AddToBasket, Pictures} from "../features/products/index";
+import {ProductInfo, Pictures} from "../features/products/index";
 import Box from "@mui/material/Box";
-import OrangeLine from "../components/OrangeLine";
 import {useParams} from "react-router-dom";
+import AddToCart from "../features/cart/components/Wrappers/AddToCart";
+import {AddProductToCart} from "../features/products/index"
 
 const productBoxSx = {
     padding: "10px",
@@ -36,9 +37,8 @@ export default function Product() {
                 </Grid>
 
                 <Grid xs={12} md={5} item>
-                    <OrangeLine/>
-                    <ProductInfo currentVariatn={currentVariant} product={useProducts} />
-                    <AddToBasket currentVariant={currentVariant} product={useProducts}/>
+                    <ProductInfo currentVariant={currentVariant} product={useProducts} />
+                    <AddToCart currentVariant={currentVariant} component={<AddProductToCart/>}/>
                 </Grid>
             </Grid>
         </Box>

@@ -1,9 +1,9 @@
 import React from "react"
 import {Typography} from "@mui/material";
 import Box from "@mui/material/Box";
-import StarsRaiting from "./ProductInfo/StarsRaiting";
-import IsInStock from "./ProductInfo/IsInStock";
-import PriceTag from "./ProductInfo/PriceTag";
+import StarsRaiting from "../ShowCase/ProductInfo/StarsRaiting";
+import IsInStock from "../ShowCase/ProductInfo/IsInStock";
+import PriceTag from "./PriceTag";
 
 const topHolderSx = {
     marginBottom: "40px",
@@ -22,15 +22,15 @@ const descriptionText = {
     marginBottom: "40px",
 }
 
-export default function ProductInfo({product, currentVariatn}) {
+export default function ProductInfo({product, currentVariant}) {
 
     return (
         <Box>
             <Box sx={topHolderSx}>
-                <PriceTag price={currentVariatn.price}/>
+                <PriceTag price={currentVariant.price}/>
                 <Typography variant={"h4"}>{product.title}</Typography>
                 <StarsRaiting value={product.rating}/>
-                <IsInStock isInStock={currentVariatn.isInStock}/>
+                <IsInStock isInStock={currentVariant.isInStock}/>
             </Box>
 
             <Typography sx={descriptionText}>{product.description}</Typography>

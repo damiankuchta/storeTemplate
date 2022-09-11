@@ -10,6 +10,6 @@ const buttonSx = {
     },
 }
 
-export default function Button({children, onClick, sx}) {
-    return (<B sx={{...buttonSx, ...sx}} onClick={onClick}>{children}</B>)
+export default function Button(props) {
+    return (<B {...props} sx={{...buttonSx, ...props.sx}}>{props.children}</B>)
 }

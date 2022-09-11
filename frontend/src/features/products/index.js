@@ -1,4 +1,4 @@
-export {default as AddToBasket} from "./components/AddToBasket"
-export {default as Pictures} from "./components/Pictures"
-export {default as ShowcaseProduct} from "./components/ShowcaseProduct"
-export {default as ProductInfo} from "./components/ProductInfo"
+export {default as AddProductToCart} from "./components/DisplayProduct/AddToCart"
+export {default as Pictures} from "./components/DisplayProduct/Pictures"
+export {default as ShowcaseProduct} from "./components/ShowCase/ShowcaseProduct"
+export {default as ProductInfo} from "./components/DisplayProduct/ProductInfo"

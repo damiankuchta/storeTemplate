@@ -8,7 +8,7 @@ const socialIconsStyles = {
 
 }
 
-export default function SocialIcon({url}) {
+export default function SocialIcon({item: url}) {
     const [isHoovered, setIsHoovered] = useState(false);
 
     const changeIsHoovered = () => {

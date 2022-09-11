@@ -1,5 +1,6 @@
 import React from "react"
-import {Typography} from "@mui/material";
+import {Box, Typography} from "@mui/material";
+import OrangeLine from "../../../../components/OrangeLine";
 
 const priceSx = {
     color: "orange",
@@ -9,8 +10,11 @@ const priceSx = {
 export default function PriceTag({price}) {
 
     return (
+        <Box>
+            <OrangeLine/>
             <Typography sx={priceSx}>
                 ${price}
             </Typography>
+        </Box>
     )
 }

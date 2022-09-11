@@ -14,6 +14,6 @@ const selectedCircleSx = {
     border: "solid 2px rgba(1,1,1,0.5)"
 }
 
-export default function ColorCircle({color, selected, onClick}) {
+export default function ColorCircle({dictKey: color, value: selected, onClick}) {
     return <Box onClick={onClick} bgcolor={color} sx={{...colorCircleSx, ...(selected && selectedCircleSx)}}/>
 }

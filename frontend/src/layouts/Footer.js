@@ -2,7 +2,9 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Logo from "../components/Logo";
 import {Container, Grid, Typography} from "@mui/material";
-import {NavList} from "../features/navigation";
+import DictList from "../components/DictList";
+import menu from "../data/menu";
+import FooterNavItem from "../features/navigation/components/FooterNavItem";
 
 
 const footerSx = {
@@ -14,6 +16,12 @@ const footerSx = {
 const copyRightsSx = {
     color: "rgba(255, 255, 255, 0.4)",
     fontSize: "12px",
+}
+
+const footerListSx = {
+    display: "flex",
+    flexDirection: "row",
+    paddingX: "40px"
 }
 
 export default function Footer() {
@@ -29,7 +37,7 @@ export default function Footer() {
                         </Typography>
                     </Grid>
                     <Grid item md={6}>
-                        <NavList/>
+                        <DictList dict={menu} itemComponent={<FooterNavItem/>} listProps={{sx: footerListSx}}/>
                     </Grid>
                 </Grid>
 

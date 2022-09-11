@@ -13,8 +13,8 @@ const selectedSx = {
     color: "orange"
 }
 
-export default function HighlightedText({children, sx, selected, onClick}) {
+export default function HighlightedText(props) {
 
-    return <Typography onClick={onClick} sx={{...sx, ...linkSx, ...(selected && selectedSx)}}>{children}</Typography>
+    return <Typography {...props} sx={{...props.sx, ...linkSx, ...(props.selected && selectedSx)}}>{props.children}</Typography>
 
 }

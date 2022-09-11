@@ -1,7 +1,7 @@
 import {Box, Grid, Typography} from "@mui/material";
 import {useSelector} from "react-redux";
 import {itemsSelector} from "../features/cart";
-import CartList from "../features/cart/components/CartList";
+import CartItems from "../features/cart/components/CartItems";
 import CartTotal from "../features/cart/components/CartTotal";
 
 const carstSx = {
@@ -18,7 +18,7 @@ export default function Cart() {
             <Typography margin={"20px"} variant={"h4"}>Shopping Cart</Typography>
             <Grid container>
                 <Grid item xs={12} lg={8}>
-                    <CartList items={items}/>
+                    <CartItems items={items}/>
                 </Grid>
                 <Grid item xs={12} lg={4}>
                     <CartTotal items={items}/>

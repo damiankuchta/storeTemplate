@@ -1,6 +1,7 @@
 import React from "react"
-import {Box, Container} from "@mui/material";
 import SocialIcon from "../../../components/SocialIcon";
+import socialMedia from "../../../data/socialMedia";
+import ArrayList from "../../../components/ArrayList";
 
 const socialLinksBoxSX = {
     display:"flex",
@@ -14,11 +15,6 @@ const socialLinksBoxSX = {
 export default function SocialLinks() {
 
     return (
-        <Box sx={socialLinksBoxSX}>
-            <SocialIcon url={'https://pinterest.co.uk/'}/>
-            <SocialIcon url={'https://instagram.com/'}/>
-            <SocialIcon url={'https://facebook.com'}/>
-            <SocialIcon url={'https://twitter.com'}/>
-        </Box>
+        <ArrayList array={socialMedia} itemComponent={<SocialIcon/>} listProps={{sx: socialLinksBoxSX}}/>
     )
 }
