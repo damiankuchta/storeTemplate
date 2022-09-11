@@ -57,7 +57,5 @@ function CartItem({item}) {
             <Grid xs={4}> ${item.product.price}</Grid>
             <Grid xs={4}> <QuantityPicker quantity={quantity} setQuantity={setQuantity} allowZero/></Grid>
         </Grid>
-
-
     )
 }
