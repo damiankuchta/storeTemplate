@@ -10,9 +10,8 @@ export default function PriceRange({price, setFilterField}) {
     const [minPrice] = useState(price[0])
     const [maxPrice] = useState(price[1])
 
-
-    const handlePriceChange = (event, value) => {
-        setFilterField({price: value})
+    const handlePriceChange = (event) => {
+        setFilterField({price: event.target.value})
     }
 
     return (

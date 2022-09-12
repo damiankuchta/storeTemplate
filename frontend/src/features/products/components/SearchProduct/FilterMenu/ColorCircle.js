@@ -3,8 +3,8 @@ import {Box} from "@mui/material";
 
 const colorCircleSx = {
     position: "relative",
-    width: "25px",
-    height: "25px",
+    width: "30px",
+    height: "30px",
     borderRadius: "50%",
     border: "solid 2px rgba(1,1,1,0.0)",
     cursor: "pointer"

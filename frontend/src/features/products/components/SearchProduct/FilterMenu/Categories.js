@@ -1,15 +1,24 @@
 import React from "react"
 import categoriesData from "../../../../../data/categories";
-import {Filter} from "./Filter";
-import {Box} from "@mui/material";
-import ArrayList from "../../../../../components/ArrayList";
+import RadioGroup from "../../../../../components/RadioGroup";
+import HighlightedText from "../../../../../components/HighlightedText";
+
+const CategoryMenuSx = {
+    padding: "10px",
+    width: "100%"
+
+}
+
 
 export function Categories({category, setFilterField}) {
 
-    const onClick = (item) => {
+    const setItem = (item) => {
         setFilterField({category: item})
     }
 
-    return <ArrayList array={categoriesData} itemComponent={<Filter/>}
-                      itemProps={{setFilterField: setFilterField, category: category, onClick: onClick}}/>
+    return <RadioGroup labelWrapper={<HighlightedText/>}
+                       formControlSx={CategoryMenuSx}
+                       items={categoriesData}
+                       selected={category} setItem={setItem}
+                       hideButton/>
 }

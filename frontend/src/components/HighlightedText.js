@@ -15,6 +15,6 @@ const selectedSx = {
 
 export default function HighlightedText(props) {
 
-    return <Typography {...props} sx={{...props.sx, ...linkSx, ...(props.selected && selectedSx)}}>{props.children}</Typography>
+    return <Typography {...props} sx={{...props.sx, ...linkSx, ...(props.isSelected && selectedSx)}}>{props.children}</Typography>
 
 }

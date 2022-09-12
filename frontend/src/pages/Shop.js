@@ -1,10 +1,14 @@
 import React, {useEffect, useState} from "react"
 import FilterMenu from "../features/products/components/SearchProduct/FilterMenu";
-import {Grid} from "@mui/material";
+import {Box} from "@mui/material";
 import brands from "../data/brands";
 import colors from "../data/colors";
 import Products from "../features/products/components/SearchProduct/Products";
 
+const mainBoxSx ={
+    display: "flex",
+    flexDirection: {xs: "column", md: "row"}
+}
 
 export default function Shop() {
 
@@ -44,11 +48,13 @@ export default function Shop() {
     }
 
     return (
-        <Grid container columns={40}>
-            <Grid xs={40} sm={10} md={10} lg={8}  item><FilterMenu {...filters} setFilterField={setFilterField}
-                                                           setFilters={setFilters}/></Grid>
-            <Grid xs={40} sm={30} md={30} lg={32}  item><Products/></Grid>
-        </Grid>
+        <Box sx={mainBoxSx} >
+            <FilterMenu {...filters}
+                            setFilterField={setFilterField}
+                            setFilters={setFilters}/>
+
+            <Products/>
+        </Box>
     )
 }
 
