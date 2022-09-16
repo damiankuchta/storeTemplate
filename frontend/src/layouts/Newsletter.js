@@ -20,6 +20,7 @@ const newsLetterHeaderSx = {
 
 const discountTextSx = {
     color: "orange",
+    fontSize: "40px"
 }
 
 const discountDescriptionSx = {
@@ -33,10 +34,10 @@ export default function Newsletter() {
         <Box sx={newsLetterSx}>
             <Container>
                 <Grid container alignItems="center">
-                    <Grid item sx={12} md={6} lg={6}>
-                        <Typography sx={newsLetterHeaderSx}>Subscribe for a
-                            <Box display={'inline'} sx={discountTextSx}> 25% Discount</Box>
-                        </Typography>
+                    <Grid item xs={12} md={6} lg={6}>
+                        <Typography display={'inline'} sx={newsLetterHeaderSx}>Subscribe for a</Typography>
+                        <Typography display={'inline'} sx={discountTextSx}> 25% Discount</Typography>
+
                         <Typography sx={discountDescriptionSx}>Nulla ac convallis lorem, eget euismod nisl. Donec in
                             libero
                             sit
@@ -44,7 +45,7 @@ export default function Newsletter() {
                             consectetur.
                             Donec auctor interdum purus, ac finibus massa bibendum nec.</Typography>
                     </Grid>
-                    <Grid container item sx={12} md={6} lg={6}>
+                    <Grid container item xs={12} md={6} lg={6}>
                         <SignupFom/>
                     </Grid>
                 </Grid>

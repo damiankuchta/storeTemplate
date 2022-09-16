@@ -1,14 +1,20 @@
-import React from "react"
+import React, {useState} from "react"
 import {productsList} from "../../../../data/productData";
 import Product from "./Products/Product";
 import ArrayList from "../../../../components/ArrayList";
+import ListItem from "../../../../components/ListItem";
+import {Grid} from "@mui/material";
 
-const listSx = {
-    width: "100%"
-}
 
 export default function Products() {
+
+    const [products] = useState(productsList())
+
     return (
-        <ArrayList array={productsList} listProps={{sx: listSx}} itemComponent={<Product/>} listItemProps={{xs: 12, md: 6}} grid/>
+        <ArrayList array={products} as={Grid} keyField={'productID'} container>
+            <ListItem as={Grid} xs={12} md={6} lg={4} disablePadding item>
+                <Product/>
+            </ListItem>
+        </ArrayList>
     )
 }

@@ -1,9 +1,11 @@
-import React from "react"
+import React, {useState} from "react"
 import {Box, Grid} from "@mui/material";
 import {ShowcaseProduct} from "../features/products/index";
-import {productsList} from "../data/productData"
+import {productsList as PL} from "../data/productData"
 
 export default function Home() {
+
+    const [productsList] = useState(PL())
 
     return (
         <Box>

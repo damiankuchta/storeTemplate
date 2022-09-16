@@ -10,7 +10,7 @@ export default function AddToCart({currentVariant, component}) {
 
     const onSubmit = (event) => {
         event.preventDefault()
-        dispatch(addItem({quantity: quantity, product: currentVariant}))
+        dispatch(addItem({quantity: quantity, product: currentVariant, variantID: currentVariant.variantID}))
     }
 
     return (

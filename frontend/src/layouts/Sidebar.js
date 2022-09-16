@@ -28,24 +28,24 @@ export default function Sidebar({isDrawerDisplayed, setIsDrawerDisplayed}) {
 
 
     return (
-        <aside>
+        <nav>
             <Box sx={boxSx}>
                 <Logo color={'black'} sx={logoSx}/>
                 <Toolbar/>
                 <SidebarNav/>
-                <SocialLinks/>
+                <SocialLinks />
             </Box>
-            <Drawer
-                variant={'temporary'}>
-                open={isDrawerDisplayed}
-                onClose={handleDrawerClose}
-                modelProps={{keepMounted: true}}>
-                <Logo color={'black'} sx={logoSx}/>
-                <Toolbar/>
-                <SidebarNav/>
-                <SocialLinks/>
-            </Drawer>
-        </aside>
+            {/*<Drawer*/}
+            {/*    variant={'temporary'}*/}
+            {/*    open={isDrawerDisplayed}*/}
+            {/*    onClose={handleDrawerClose}*/}
+            {/*    modelProps={{keepMounted: true}} >*/}
+            {/*    <Logo color={'black'} sx={logoSx}/>*/}
+            {/*    <Toolbar/>*/}
+            {/*    <SidebarNav/>*/}
+            {/*    <SocialLinks/>*/}
+            {/*</Drawer>*/}
+        </nav>
     );
 }
 

@@ -1,6 +1,9 @@
 import React from "react"
 import ColorCircle from "./ColorCircle";
-import CheckboxGroup from "../../../../../components/CheckboxGroup";
+import DictList from "../../../../../components/DictList";
+import {FormControl} from "@mui/material";
+import CheckButton from "../../../../../components/CheckButton";
+import HighlightedText from "../../../../../components/HighlightedText";
 
 const ColorListSx = {
     display: "grid",
@@ -22,15 +25,17 @@ const colorItemSx = {
 
 export default function Colors({colors, setFilterField}) {
 
-    const toggleColor = (key, value) => {
-        setFilterField({colors: {...colors, [key]: !value}})
+    const toggleColor = (dictKey, value) => {
+        setFilterField({colors: {...colors, [dictKey]: !value}})
     }
 
-    return <CheckboxGroup checkButtonSx={colorItemSx}
-                          formControlSx={ColorListSx}
-                          items={colors}
-                          setItem={toggleColor}
-                          labelWrapper={<ColorCircle/>} hideTextLabel hideCheckbox/>
+    return <DictList dict={colors} as={FormControl} sx={ColorListSx}>
+        <CheckButton labelingComponent={<ColorCircle/>}
+                     sx={colorItemSx}
+                     onChange={toggleColor}
+                     noButton
+        />
+    </DictList>
 
 }
 

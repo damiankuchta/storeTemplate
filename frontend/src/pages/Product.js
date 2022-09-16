@@ -15,7 +15,7 @@ const productBoxSx = {
 
 export default function Product() {
 
-    const [useProducts, setProducts] = useState(new randomProduct())
+    const [useProducts] = useState(new randomProduct())
     const [currentVariant, setCurrentVariant] = useState({})
     let { id } = useParams();
 
@@ -32,7 +32,8 @@ export default function Product() {
             {/*todo: <Breadcrumbs title={products.title}/>*/}
             <Grid container spacing={10}>
                 <Grid xs={12} md={7} item>
-                    <Pictures currentVariant={currentVariant} variants={useProducts.variants}
+                    <Pictures currentVariant={currentVariant}
+                              variants={useProducts.variants}
                               setCurrentVariant={setCurrentVariant}/>
                 </Grid>
 

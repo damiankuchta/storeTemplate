@@ -1,21 +1,21 @@
-import React from "react"
-import {Grid, List, ListItem} from "@mui/material";
+import React, {useEffect, useMemo} from "react"
+import {List} from "@mui/material";
 
-export default function ArrayList({array, itemComponent, listItemProps, listProps, itemProps, grid}) {
+export default function ArrayList(props) {
+
+    const {as, array, keyField, children, ...rest} = props
+
+
+    useEffect(() => {
+        React.Children.only(children)
+        React.isValidElement(children)
+    }, [])
 
     return (
-        <List {...listProps} as={grid ? Grid : "ul"} disablePadding container>
-            {array.map((item, index) => {
-                return (
-                    <ListItem disablePadding {...listItemProps} key={item + index}  as={grid ? Grid : "li"} item>
-                        {React.cloneElement(itemComponent, {
-                            ...itemProps,
-                            item: item,
-                            onClick: () => {typeof(itemProps.onClick) === "function" && itemProps.onClick(item)},
-                        })}
-                    </ListItem>
-                )
-            })}
+        <List as={as || "ul"} {...rest}>
+            {array.map((arrayItem) =>
+                React.cloneElement(children, {key: (arrayItem?.[keyField] || arrayItem), arrayItem: arrayItem})
+            )}
         </List>
     )
 }

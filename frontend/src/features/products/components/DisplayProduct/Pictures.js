@@ -3,6 +3,8 @@ import Image from "../../../../components/Image";
 import {Box} from "@mui/material";
 import ArrayList from "../../../../components/ArrayList";
 import VariantPicture from "./VariantPicutres";
+import ListItem from "../../../../components/ListItem";
+
 
 const mainPictureSx = {
     width: "100%",
@@ -24,18 +26,11 @@ export default function Pictures({currentVariant, variants, setCurrentVariant}) 
     return (
         <Box>
             <Image src={currentVariant.image} sx={mainPictureSx}/>
-            <ArrayList array={variants} itemComponent={<VariantPicture/>}
-                       itemProps={{
-                           setCurrentVariant: setCurrentVariant,
-                           currentVariant: currentVariant
-                       }}
-                       listItemProps={{
-                           sx: listItemSx
-                       }}
-                       listProps={{
-                           sx: listSx
-                       }}
-            />
+            <ArrayList array={variants} sx={listSx} keyField={'variantID'}>
+                <ListItem sx={listItemSx}>
+                    <VariantPicture setCurrentVariant={setCurrentVariant} currentVariant={currentVariant}/>
+                </ListItem>
+            </ArrayList>
         </Box>
     )
 }

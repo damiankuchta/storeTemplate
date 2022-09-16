@@ -1,11 +1,8 @@
 import React from "react"
-import DictList from "../../../../../components/DictList";
-import {Checkbox, FormControlLabel, Radio} from "@mui/material";
-import {Filter} from "./Filter";
+import {FormControl} from "@mui/material";
 import HighlightedText from "../../../../../components/HighlightedText";
-import categoriesData from "../../../../../data/categories";
-import ControlGroup from "../../../../../components/CheckboxGroup";
-import CheckboxGroup from "../../../../../components/CheckboxGroup";
+import DictList from "../../../../../components/DictList";
+import CheckButton from "../../../../../components/CheckButton";
 
 const fromControlLabelSx = {
     width: "100%",
@@ -13,19 +10,28 @@ const fromControlLabelSx = {
 }
 
 
+const checkedSx = {
+    color: "orange"
+}
+
+
 export default function Brands({brands, setFilters}) {
 
-    const toggleCheck = (key, value) => {
+    const toggleCheck = (dictKey, value) => {
         setFilters(oldFilters => {
             let newFilters = oldFilters
-            newFilters.brands[key] = !value
+            newFilters.brands[dictKey] = !value
             return {...newFilters}
         })
     }
 
-    return <CheckboxGroup labelWrapper={<HighlightedText/>}
-                          items={brands}
-                          setItem={toggleCheck}
-                          control={<Checkbox/>}
-                          ideButton/>
+    return (
+        <DictList dict={brands} as={FormControl} >
+            <CheckButton labelingComponent={<HighlightedText/>}
+                         sx={fromControlLabelSx}
+                         checkedSx={checkedSx}
+                         onChange={toggleCheck}
+                         />
+        </DictList>
+    )
 }

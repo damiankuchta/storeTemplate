@@ -1,7 +1,9 @@
 import React from "react"
 import categoriesData from "../../../../../data/categories";
-import RadioGroup from "../../../../../components/RadioGroup";
+import {RadioGroup} from "@mui/material";
 import HighlightedText from "../../../../../components/HighlightedText";
+import RadioButton from "../../../../../components/RadioButton";
+import ArrayList from "../../../../../components/ArrayList";
 
 const CategoryMenuSx = {
     padding: "10px",
@@ -9,16 +11,29 @@ const CategoryMenuSx = {
 
 }
 
+const checkedSx = {
+    color: "orange"
+}
+
 
 export function Categories({category, setFilterField}) {
 
-    const setItem = (item) => {
-        setFilterField({category: item})
+    const changeSelections = (event) => {
+        setFilterField({category: event.target.value})
     }
 
-    return <RadioGroup labelWrapper={<HighlightedText/>}
-                       formControlSx={CategoryMenuSx}
-                       items={categoriesData}
-                       selected={category} setItem={setItem}
-                       hideButton/>
+    return (
+        <ArrayList array={categoriesData}
+                   as={RadioGroup}
+                   sx={CategoryMenuSx}
+                   value={category}
+                   onChange={changeSelections}>
+
+            <RadioButton labelingComponent={<HighlightedText/>}
+                         checkedSx={checkedSx}
+                         selected={category}
+                         noButton/>
+        </ArrayList>
+    )
 }
+

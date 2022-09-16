@@ -4,7 +4,16 @@ import {randomVariant} from "../../data/productData";
 export const cartSlice = createSlice({
     name: "cart",
     initialState: {
-        items: [{quantity: 2, product: new randomVariant("title1").toJSON()}, {quantity: 4, product: new randomVariant("title2").toJSON()}],
+        items: [{
+            quantity: 2,
+            variantID: 1,
+            product: new randomVariant("title1").toJSON()
+        },
+            {
+                quantity: 4,
+                variantID: 2,
+                product: new randomVariant("title2").toJSON()
+            }],
         status: "idle",
         error: null,
     },
@@ -13,7 +22,7 @@ export const cartSlice = createSlice({
             const item = action.payload
 
             //find if item is already in the array, if it is, swap it with new data, if not add it into array
-            const index = state.items.findIndex(i => (i.product.variantID === item.product.variantID))
+            const index = state.items.findIndex(state => (state.product.variantID === item.product.variantID))
 
 
             if (index > -1) {

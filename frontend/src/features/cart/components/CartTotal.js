@@ -7,7 +7,7 @@ const cartTotalSx = {
     padding: "20px",
     margin: "7px 20px",
 
-    "& > *:not(:first-child)": {
+    "& > *:not(h6)": {
         marginTop: "35px"
     }
 }

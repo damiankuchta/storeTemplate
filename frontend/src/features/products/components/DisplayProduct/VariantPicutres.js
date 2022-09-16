@@ -11,7 +11,7 @@ const pictureWithSelectedBorderSx = {
     border: "3px solid orange"
 }
 
-const VariantPicture = ({currentVariant, setCurrentVariant, item: variant}) => {
+const VariantPicture = ({currentVariant, setCurrentVariant, arrayItem: variant}) => {
 
     return (
         <Image sx={currentVariant === variant ? pictureWithSelectedBorderSx : pictureSx}

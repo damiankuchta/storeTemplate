@@ -12,7 +12,6 @@ const selectedOrangeLineSx = {
 }
 
 const orangeLineSx = {
-
     transitionDuration: "0.3s",
     position: "relative",
     right: "100px",

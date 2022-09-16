@@ -15,7 +15,6 @@ const ProductItemSx = {
 
 
 const ProductItemFooterSx = {
-
     paddingTop: "20px",
     width: "100%",
     display: "flex",
@@ -33,14 +32,12 @@ const ImageSx = {
 }
 
 
-export default function Product({item: product}) {
+export default function Product({arrayItem: product}) {
 
     const {title, rating, description, productID, variants, fromPrice, category, brand} = product
 
     return (
         <Grid sx={ProductItemSx} container>
-
-
             <Link to={`/product/${productID}`} style={linkStyling}><Image sx={ImageSx} src={variants[0].image}/></Link>
             <Box sx={ProductItemFooterSx}>
                 <Link to={`/product/${productID}`} style={linkStyling}>
