@@ -2,7 +2,7 @@ import React from "react"
 import {Box, Grid, Typography} from "@mui/material";
 import Image from "../../../../../components/Image";
 import PriceTag from "../../DisplayProduct/PriceTag";
-import StarsRaiting from "../../ShowCase/ProductInfo/StarsRaiting";
+import StarsRaiting from "../../ShowCase/ProductColumn/ProductInfo/StarsRaiting";
 import {Link} from "react-router-dom";
 import {ShoppingCart} from "@mui/icons-material";
 

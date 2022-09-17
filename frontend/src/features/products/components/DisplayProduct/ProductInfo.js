@@ -1,8 +1,8 @@
 import React from "react"
 import {Typography} from "@mui/material";
 import Box from "@mui/material/Box";
-import StarsRaiting from "../ShowCase/ProductInfo/StarsRaiting";
-import IsInStock from "../ShowCase/ProductInfo/IsInStock";
+import StarsRaiting from "../ShowCase/ProductColumn/ProductInfo/StarsRaiting";
+import IsInStock from "../ShowCase/ProductColumn/ProductInfo/IsInStock";
 import PriceTag from "./PriceTag";
 
 const topHolderSx = {

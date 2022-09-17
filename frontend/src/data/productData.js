@@ -45,9 +45,9 @@ export class randomProduct {
     }
 }
 
-export const productsList = () => {
+export const productsListRandom = (fromProductAmount=10, toProductAmount=50) => {
     let idList = []
-    return [...Array(randomIntInRange(50, 10))].map(() => {
+    return [...Array(randomIntInRange(toProductAmount, fromProductAmount))].map(() => {
         let newProduct = new randomProduct
         while (true) {
             newProduct.productID = newProduct.generateNewID()
@@ -60,6 +60,19 @@ export const productsList = () => {
     })
 }
 
-
+export const productList = (amount) => {
+    let idList = []
+    return [...Array(amount)].map(() => {
+        let newProduct = new randomProduct
+        while (true) {
+            newProduct.productID = newProduct.generateNewID()
+            if (!idList.some((pid) => pid === newProduct.productID)) {
+                idList.push(newProduct.productID)
+                break
+            }
+        }
+        return newProduct.toJSON()
+    })
+}
 
 

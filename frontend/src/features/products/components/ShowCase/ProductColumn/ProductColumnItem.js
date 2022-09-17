@@ -1,6 +1,6 @@
 import React from "react"
 import {Box, Typography} from "@mui/material";
-import OrangeLine from "../../../../components/OrangeLine";
+import OrangeLine from "../../../../../components/OrangeLine";
 import {Link} from "react-router-dom";
 
 const transitionTime = "0.3s"
@@ -10,6 +10,7 @@ const imgSx = {
     width: "100%",
     height: "100%",
     transition: transitionTime,
+
 }
 
 const headerBoxSx = {
@@ -41,24 +42,33 @@ const mainBoxSx = {
     overflow: "hidden",
     cursor: "pointer",
     color: "black",
+    height: "410px",
 
     "&:hover > img": {
         transition: transitionTime,
         filter: "grayscale(100%) brightness(0.4) contrast(80%)",
+
     },
 
     "&:hover > div > p, &:hover > div> h5": {
         transition: transitionTime,
-        color: "white"
+        color: "white",
     },
 }
 
-export default function ShowcaseProduct({alt, product, sx, isBigger}) {
+const biggerBox = {
+     height: "580px"
+}
 
+
+const everyXPicture = 3
+export default function ProductColumnItem({alt, arrayItem: product, sx, index, totalNumberInColumn, columnNumber}) {
+
+    const isBigger = index < (totalNumberInColumn-(totalNumberInColumn % everyXPicture)) && !((index-columnNumber) % everyXPicture)
 
     return (
-        <Link to={`/product/${product.productID}`}>
-            <Box sx={{...mainBoxSx, ...sx, height: isBigger ? "580px" : "410px"}}>
+        <Link style={{width: "100%"}} to={`/product/${product.productID}`}>
+            <Box sx={{...mainBoxSx, ...sx, ...(isBigger && biggerBox) }}>
                 <Box sx={headerBoxSx}>
                     <OrangeLine/>
                     {product.fromPrice && <Typography sx={priceTextSx}>From ${product.fromPrice}</Typography>}
