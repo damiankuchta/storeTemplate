@@ -7,14 +7,13 @@ import ListItem from "../../../components/ListItem";
 
 export default function SidebarNav() {
 
-     return (
-         <DictList dict={menu}>
-             <ListItem>
-                 <SidebarNavItem/>
-             </ListItem>
-         </DictList>
-         )
-
-
-
+    return (
+        <nav>
+            <DictList dict={menu}>
+                <ListItem>
+                    <SidebarNavItem/>
+                </ListItem>
+            </DictList>
+        </nav>
+    )
 }

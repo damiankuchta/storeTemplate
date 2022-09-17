@@ -30,7 +30,7 @@ export default function Layout({children}) {
 
                 <Box>
                     <Newsletter/>
-                    {/*<Footer/>*/}
+                    <Footer/>
                 </Box>
 
         </React.Fragment>

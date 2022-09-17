@@ -13,13 +13,13 @@ export default function Home() {
     //get amount of products for each column
     useEffect(() => {
 
-        const extras =  productsList.length % 3
+        const extras = productsList.length % 3
 
         const first = productsList.slice(0, Math.ceil(productsList.length / 3))
         let second = productsList.slice(Math.ceil(productsList.length / 3), Math.ceil(productsList.length / 3 * 2))
-        let third = productsList.slice(Math.ceil(productsList.length/3 * 2))
+        let third = productsList.slice(Math.ceil(productsList.length / 3 * 2))
 
-        if(extras === 2) {
+        if (extras === 2) {
             third.push(productsList[0])
         } else if (extras === 1) {
             third.push(productsList[0])
@@ -36,14 +36,20 @@ export default function Home() {
     return (
         <Grid container>
             <Grid xs={12} lg={4} item>
-                {firstColumn && <ProductColumn totalNumberInColumn={firstColumn.length} productList={firstColumn} columnNumber={0}/>}
+                {firstColumn && <ProductColumn totalNumberInColumn={firstColumn.length}
+                                               productList={firstColumn}
+                                               biggerPictureEvery={0}/>}
             </Grid>
 
             <Grid xs={12} lg={4} item>
-                {secondColumn && <ProductColumn totalNumberInColumn={secondColumn.length} productList={secondColumn} columnNumber={2}/>}
+                {secondColumn && <ProductColumn totalNumberInColumn={secondColumn.length}
+                                                productList={secondColumn}
+                                                biggerPictureEvery={2}/>}
             </Grid>
             <Grid xs={12} lg={4} item>
-                {thirdColumn && <ProductColumn totalNumberInColumn={thirdColumn.length} productList={thirdColumn} columnNumber={1}/>}
+                {thirdColumn && <ProductColumn totalNumberInColumn={thirdColumn.length}
+                                               productList={thirdColumn}
+                                               biggerPictureEvery={1}/>}
             </Grid>
         </Grid>
     )

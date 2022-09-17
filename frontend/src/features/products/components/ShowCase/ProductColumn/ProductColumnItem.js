@@ -57,18 +57,26 @@ const mainBoxSx = {
 }
 
 const biggerBox = {
-     height: "580px"
+    height: "580px"
 }
 
 
 const everyXPicture = 3
-export default function ProductColumnItem({alt, arrayItem: product, sx, index, totalNumberInColumn, columnNumber}) {
+export default function ProductColumnItem({
+                                              alt,
+                                              arrayItem: product,
+                                              sx,
+                                              index,
+                                              totalNumberInColumn,
+                                              biggerPictureEvery
+                                          }) {
 
-    const isBigger = index < (totalNumberInColumn-(totalNumberInColumn % everyXPicture)) && !((index-columnNumber) % everyXPicture)
+    const isBigger = index < (totalNumberInColumn - (totalNumberInColumn % everyXPicture))
+        && !((index - biggerPictureEvery) % everyXPicture)
 
     return (
         <Link style={{width: "100%"}} to={`/product/${product.productID}`}>
-            <Box sx={{...mainBoxSx, ...sx, ...(isBigger && biggerBox) }}>
+            <Box sx={{...mainBoxSx, ...sx, ...(isBigger && biggerBox)}}>
                 <Box sx={headerBoxSx}>
                     <OrangeLine/>
                     {product.fromPrice && <Typography sx={priceTextSx}>From ${product.fromPrice}</Typography>}

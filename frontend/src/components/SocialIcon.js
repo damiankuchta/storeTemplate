@@ -5,7 +5,6 @@ import {SocialIcon as S} from "react-social-icons";
 const socialIconsStyles = {
     width: "30px",
     height: "30px",
-
 }
 
 export default function SocialIcon({arrayItem: url}) {

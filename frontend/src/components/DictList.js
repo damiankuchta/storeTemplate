@@ -4,7 +4,7 @@ import {List, ListItem} from "@mui/material";
 
 export default function DictList(props) {
 
-    const {as, dict, keyField, keyTemplate, children, ...rest} = props
+    const {dict, keyField, keyTemplate, children, ...rest} = props
 
     useEffect(() => {
         React.Children.only(children)
